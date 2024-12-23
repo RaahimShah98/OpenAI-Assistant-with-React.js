@@ -13,10 +13,10 @@ const ChatComponent = () => {
   const [assitant_list, setAssitantList] = useState([])
   const [messageList, setMessageList] = useState([])
 
-  const assistant_name = "OpenAI-Assistant"
-  const openaiApiKey = "Your OPENAI API KEY";
-  const gpt_model = "GPT MODEL OF YOUR CHOICE"
-  const assitant_instructions = "INSTRUCTIONS. FOR. YOUR. OPENAI. ASSISTANT" // Seperate each instrction with a "."
+  // const assistant_name = "OpenAI-Assistant"
+  // const openaiApiKey = "Your OPENAI API KEY";
+  // const gpt_model = "GPT MODEL OF YOUR CHOICE"
+  // const assitant_instructions = "INSTRUCTIONS. FOR. YOUR. OPENAI. ASSISTANT" // Seperate each instrction with a "."
 
   const assistants = []
   const openai_api = new OpenAI({
