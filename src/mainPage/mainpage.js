@@ -14,7 +14,7 @@ const ChatComponent = () => {
   const [messageList, setMessageList] = useState([])
 
   // const assistant_name = "OpenAI-Assistant"
-  // const openaiApiKey = "Your OPENAI API KEY";
+  // add your key here
   // const gpt_model = "GPT MODEL OF YOUR CHOICE"
   // const assitant_instructions = "INSTRUCTIONS. FOR. YOUR. OPENAI. ASSISTANT" // Seperate each instrction with a "."
 
