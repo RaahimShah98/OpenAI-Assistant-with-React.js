@@ -14,8 +14,9 @@ const ChatComponent = () => {
   const [messageList, setMessageList] = useState([])
 
   const assistant_name = "OpenAI-Assistant"
-  const openaiApiKey = "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";
-
+  const openaiApiKey = "Your OPENAI API KEY";
+  const gpt_model = "GPT MODEL OF YOUR CHOICE"
+  const assitant_instructions = "INSTRUCTIONS. FOR. YOUR. OPENAI. ASSISTANT" // Seperate each instrction with a "."
 
   const assistants = []
   const openai_api = new OpenAI({
@@ -72,7 +73,7 @@ const ChatComponent = () => {
     else {
       console.log("Assitant ALREADY EXISTS")
       try {
-        const assistant = await openai_api.beta.assistants.retrieve("asst_FHQJd3JwVuTAjf5gvlA8hb8Q")
+        const assistant = await openai_api.beta.assistants.retrieve("YOUR ASSITANT ID")
         console.log(assistant)
         setAssistant(assistant)
       } catch (e) {
@@ -86,9 +87,9 @@ const ChatComponent = () => {
 
   const create_assitant = async () => {
     const assistant = await openai_api.beta.assistants.create({
-      name: "Nutri-Bot",
-      instructions: "Answer to greetings. Answer to Nutrition Based Questions. answer all non nutritional based questions except for greetings with Ask a question based on nutrition. Answer With high precision",
-      model: "gpt-4-1106-preview",
+      name: assistant_name,
+      instructions: assitant_instructions,
+      model: gpt_model,
     });
 
     setAssistant(assistant)
@@ -152,11 +153,6 @@ const ChatComponent = () => {
     console.log(assistantResponse)
     updateAssistantResponse(messageList.length, assistantResponse);
 
-    // setTimeout(() => {
-    //   const assistantResponse = "This is a response from the assistant. ";
-    // }, 2000); // Replace with your actual async logic
-
-    // setMessage("")
   };
 
   const updateAssistantResponse = (index, response) => {
